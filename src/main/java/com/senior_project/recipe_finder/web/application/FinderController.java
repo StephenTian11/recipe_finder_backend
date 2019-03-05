@@ -4,10 +4,7 @@ import com.senior_project.recipe_finder.business.domain.Recipe;
 import com.senior_project.recipe_finder.business.service.FinderService;
 import com.senior_project.recipe_finder.business.domain.SearchQuery;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +16,8 @@ public class FinderController {
     @Autowired
     private FinderService finderService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, value = "/recipes")
     public List<Recipe> getSearch(@RequestParam(value = "request") String request,
                                   @RequestParam(value = "ingr", required = false) String ingr,
                                   @RequestParam(value = "diet", required = false) String diet,
