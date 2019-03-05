@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/search")
@@ -19,9 +20,19 @@ public class FinderController {
     private FinderService finderService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Recipe> getSearch(@RequestParam(value = "request") String request){
+    public List<Recipe> getSearch(@RequestParam(value = "request") String request,
+                                  @RequestParam(value = "ingr", required = false) String ingr,
+                                  @RequestParam(value = "diet", required = false) String diet,
+                                  @RequestParam(value = "health", required = false) String health,
+                                  @RequestParam(value = "calories", required = false) String colories,
+                                  @RequestParam(value = "time", required = false) String time){
         SearchQuery searchQuery = new SearchQuery();
         searchQuery.setQuery(request);
+        searchQuery.setHealth(health);
+        searchQuery.setTime(time);
+        searchQuery.setCalories(colories);
+        searchQuery.setDiet(diet);
+        searchQuery.setIngr(ingr);
         return finderService.getQueryResults(searchQuery);
     }
 }
