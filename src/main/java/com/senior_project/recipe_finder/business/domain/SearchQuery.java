@@ -9,7 +9,7 @@ public class SearchQuery {
     private String appId = "369df137";
     private String appKey = "845a0bb6179cb06431b8296ee66dfa85";
     private String from = "0";
-    private String to = "10";
+    private String to = "50";
     private String ingr;
     private String diet;
     private String health;
