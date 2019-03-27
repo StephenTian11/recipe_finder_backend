@@ -1,7 +1,6 @@
 package com.senior_project.recipe_finder.business.domain;
 
 import lombok.Data;
-import org.apache.tomcat.jni.Local;
 
 import java.util.List;
 
