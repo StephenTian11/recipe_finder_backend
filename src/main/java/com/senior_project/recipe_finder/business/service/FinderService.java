@@ -5,6 +5,7 @@ import com.senior_project.recipe_finder.business.domain.LocalRecipe;
 import com.senior_project.recipe_finder.business.edamamData.EdamamResponse;
 import com.senior_project.recipe_finder.business.domain.SearchQuery;
 import com.senior_project.recipe_finder.business.edamamData.Hit;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,8 @@ public class FinderService {
                     }
                 }
             }
+
+            Collections.sort(localRecipes);
         }
         
 
