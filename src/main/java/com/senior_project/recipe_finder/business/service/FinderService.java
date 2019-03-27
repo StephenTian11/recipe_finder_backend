@@ -45,6 +45,8 @@ public class FinderService {
                     }
                 }
             }
+
+            Collections.sort(localRecipes);
         }
         
 
