@@ -11,6 +11,7 @@ public class LocalRecipe implements Comparable<LocalRecipe>{
     private String url;
     private Integer yield;
     private List<String> ingredientLines;
+    private List<String> categories;
     private Integer totalTime;
     private Integer matchedIngredients = 0;
 

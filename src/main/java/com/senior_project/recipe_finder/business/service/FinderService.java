@@ -32,6 +32,18 @@ public class FinderService {
             localRecipe.setTotalTime(hit.getRecipe().getTotalTime());
             localRecipe.setUrl(hit.getRecipe().getUrl());
             localRecipe.setYield(hit.getRecipe().getYield());
+
+            List<String> categories = new ArrayList<>();
+            for(String dietLabel : hit.getRecipe().getDietLabels()){
+                categories.add(dietLabel);
+            }
+
+            for(String dietLabel : hit.getRecipe().getHealthLabels()){
+                categories.add(dietLabel);
+            }
+
+            localRecipe.setCategories(categories);
+
             localRecipes.add(localRecipe);
         }
         if(inventory != null){
